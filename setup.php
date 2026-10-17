@@ -212,10 +212,9 @@ if (!is_file($dir . '/wp-config.php')) {
     define('WP_SITEURL', WP_HOME);
 
     // --- Sarcio, pinned exactly as a real deploy would ---------------------
-    // Every setting is constant-pinnable, so the demo writes no settings to the
-    // database and the settings screen shows each field as deploy-managed.
+    // The two keys are saved as ordinary settings at start-up (connect.php),
+    // the way a site owner pastes them in; everything else is pinned here.
     define('HARBOR_SARCIO_PLUGIN', {$plugin});
-    define('SARCIO_SITE_KEY', getenv('SARCIO_SITE_KEY') ?: 'pk_demo_harbor_pine');
     define('SARCIO_API_URL', getenv('SARCIO_API_URL') ?: 'http://control.sarcio.local');
     define('SARCIO_WIDGET_SRC', getenv('SARCIO_WIDGET_SRC') ?: SARCIO_API_URL . '/sarcio.js');
     // The demo shows the reporter to every visitor; a real public site should not.
@@ -223,7 +222,7 @@ if (!is_file($dir . '/wp-config.php')) {
     define('SARCIO_SERVER_SCOPE', 'all');
     // Server-side fixes through the Sarcio sidecar running beside WordPress,
     // the fast path for a host that can run a service. Without a DSN the
-    // plugin falls back to fetching fixes itself with the sidecar key.
+    // plugin falls back to fetching fixes itself with the secret key.
     define('SARCIO_SIDECAR_DSN', getenv('SARCIO_SIDECAR_DSN') ?: 'unix:///run/sarcio/harbor-pine.sock');
     define('SARCIO_SHIM_TOKEN', getenv('SARCIO_SHIM_TOKEN') ?: '');
 
