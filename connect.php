@@ -12,6 +12,12 @@ $settings['site_key'] = getenv('SARCIO_SITE_KEY') ?: ($settings['site_key'] ?? '
 if (getenv('SARCIO_SIDECAR_KEY')) {
     $settings['sidecar_key'] = getenv('SARCIO_SIDECAR_KEY');
 }
+$settings['launcher_color'] ??= '#2e6b4f';
+$settings['launcher_icon'] ??= 'chat';
+$settings['launcher_label'] ??= 'Report a bug';
+$settings['launcher_position'] ??= 'right';
+$settings['launcher_style'] ??= 'icon';
+$settings['review_in_admin'] ??= true;
 update_option('sarcio_settings', $settings);
 
 $password = (string) getenv('HARBOR_ADMIN_PASSWORD');
