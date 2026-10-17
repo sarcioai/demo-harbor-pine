@@ -1,0 +1,80 @@
+/*
+Theme Name: Harbor & Pine
+Template: twentytwentyfive
+Description: The website of Harbor & Pine Landscaping in Tacoma, Washington. A child theme of Twenty Twenty-Five.
+Version: 3.1.0
+Requires at least: 6.7
+Requires PHP: 8.1
+Text Domain: harbor-pine
+*/
+
+.harbor-card img {
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.harbor-quote-form label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.harbor-quote-form input,
+.harbor-quote-form select,
+.harbor-quote-form textarea {
+  background: #fff;
+  border: 1px solid #c9d2cf;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font: inherit;
+  padding: 0.7rem 0.85rem;
+  width: 100%;
+}
+
+.harbor-quote-form .field {
+  margin-bottom: 1.1rem;
+}
+
+.harbor-quote-form .row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.harbor-quote-form button {
+  background: var(--wp--preset--color--pine);
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.85rem 1.8rem;
+}
+
+.harbor-quote-result {
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+}
+
+.harbor-quote-result.is-error {
+  background: #fdecea;
+  border: 1px solid #f3b8b1;
+  color: #9b1c12;
+}
+
+.harbor-quote-result.is-ok {
+  background: #e6f4ea;
+  border: 1px solid #a9d5b6;
+  color: #1d5b33;
+}
+
+@media (max-width: 640px) {
+  .harbor-quote-form .row {
+    grid-template-columns: 1fr;
+  }
+}

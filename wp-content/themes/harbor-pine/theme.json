@@ -1,0 +1,90 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "color": {
+      "palette": [
+        { "color": "#F7F6F2", "name": "Base", "slug": "base" },
+        { "color": "#16232B", "name": "Contrast", "slug": "contrast" },
+        { "color": "#1E3A4A", "name": "Harbor", "slug": "harbor" },
+        { "color": "#2E6B4F", "name": "Pine", "slug": "pine" },
+        { "color": "#E3ECE7", "name": "Mist", "slug": "mist" },
+        { "color": "#D9A441", "name": "Cedar", "slug": "cedar" },
+        { "color": "#5C6B70", "name": "Slate", "slug": "slate" }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Fira Sans",
+              "fontStyle": "normal",
+              "fontWeight": "400",
+              "src": ["file:./assets/fonts/fira-sans/FiraSans-Regular.woff2"]
+            },
+            {
+              "fontFamily": "Fira Sans",
+              "fontStyle": "normal",
+              "fontWeight": "600",
+              "src": ["file:./assets/fonts/fira-sans/FiraSans-SemiBold.woff2"]
+            },
+            {
+              "fontFamily": "Fira Sans",
+              "fontStyle": "normal",
+              "fontWeight": "700",
+              "src": ["file:./assets/fonts/fira-sans/FiraSans-Bold.woff2"]
+            }
+          ],
+          "fontFamily": "\"Fira Sans\", sans-serif",
+          "name": "Fira Sans",
+          "slug": "fira-sans"
+        },
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Roboto Slab",
+              "fontStyle": "normal",
+              "fontWeight": "300 800",
+              "src": ["file:./assets/fonts/roboto-slab/RobotoSlab-VariableFont_wght.woff2"]
+            }
+          ],
+          "fontFamily": "\"Roboto Slab\", Georgia, serif",
+          "name": "Roboto Slab",
+          "slug": "roboto-slab"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var:preset|color|base",
+      "text": "var:preset|color|contrast"
+    },
+    "elements": {
+      "button": {
+        ":hover": {
+          "color": { "background": "var:preset|color|harbor", "text": "var:preset|color|base" }
+        },
+        "border": { "radius": "999px" },
+        "color": { "background": "var:preset|color|pine", "text": "var:preset|color|base" },
+        "typography": { "fontWeight": "700" }
+      },
+      "heading": {
+        "color": { "text": "var:preset|color|harbor" },
+        "typography": {
+          "fontFamily": "var:preset|font-family|roboto-slab",
+          "fontWeight": "600",
+          "letterSpacing": "-0.01em"
+        }
+      },
+      "link": {
+        ":hover": { "color": { "text": "var:preset|color|harbor" } },
+        "color": { "text": "var:preset|color|pine" }
+      }
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|fira-sans"
+    }
+  }
+}

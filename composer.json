@@ -1,0 +1,14 @@
+{
+  "name": "sarcio/demo-harbor-pine",
+  "description": "Harbor & Pine Landscaping (fictional) — a real WordPress whose header shows a raw {{phone}} placeholder and whose quote form rejects ordinary phone numbers, fixed live by the Sarcio plugin and sidecar.",
+  "type": "project",
+  "license": "UNLICENSED",
+  "require": {
+    "php": ">=8.2",
+    "sarcio/wordpress": "^0.3.2"
+  },
+  "repositories": [
+    { "type": "vcs", "url": "https://github.com/sarcioai/sarcio-wordpress" }
+  ],
+  "config": { "sort-packages": true }
+}
