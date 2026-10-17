@@ -1,6 +1,6 @@
 {
   "name": "sarcio/demo-harbor-pine",
-  "description": "Harbor & Pine Landscaping (fictional) — a real WordPress whose header shows a raw {{phone}} placeholder and whose quote form rejects ordinary phone numbers, fixed live by the Sarcio plugin and sidecar.",
+  "description": "Harbor & Pine Landscaping (fictional) — a real WordPress whose quote button shows a raw translation key and whose quote form rejects ordinary phone numbers, fixed live by the Sarcio plugin and sidecar.",
   "type": "project",
   "license": "UNLICENSED",
   "require": {

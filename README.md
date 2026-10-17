@@ -20,13 +20,12 @@ service.
 
 ## What's broken
 
-1. **"Our phone number shows as {{phone}}."** Theme 3.0 moved the company's
-   number into the `harbor_business_phone` option, but the header and the
-   home page still read the old theme setting and print its placeholder
-   (`wp-content/themes/harbor-pine/patterns/header.php`). The footer, which
-   reads the new option, shows the real number. A fix approved in Sarcio puts
-   the number back for every visitor; the pull request with the permanent fix
-   edits the theme.
+1. **"The quote button shows quote_form.submit_button."** Since 1.4 the quote
+   plugin (`wp-content/mu-plugins/harbor-quote-requests.php`) looks for its
+   translation file in a folder a must-use plugin doesn't have, so the form's
+   button prints its string key instead of "Request my free quote". A fix
+   approved in Sarcio puts the label back for every visitor; the pull request
+   with the permanent fix edits the plugin.
 2. **"The quote form says my phone number is invalid."** Since 1.4 the quote
    plugin (`wp-content/mu-plugins/harbor-quote-requests.php`) accepts only ten
    bare digits, so `(253) 555-0142` is refused and the lead is lost. The form

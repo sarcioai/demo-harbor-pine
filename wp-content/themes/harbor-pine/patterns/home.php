@@ -8,7 +8,7 @@
 defined('ABSPATH') || exit;
 
 $harbor_image = static fn (string $file): string => esc_url(get_theme_file_uri('assets/images/' . $file));
-$harbor_phone = get_theme_mod('header_phone', '{{phone}}');
+$harbor_phone = (string) get_option('harbor_business_phone', '');
 $harbor_services = [
     ['Garden design', 'A planting plan drawn for your light, soil and the way you use the yard, with a 3D sketch before anything goes in the ground.', 'service-design.jpg'],
     ['Patios & stonework', 'Bluestone and basalt patios, dry-stack walls and steps that stay put through a Tacoma winter.', 'service-patio.jpg'],

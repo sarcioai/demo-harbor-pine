@@ -7,11 +7,7 @@
 
 defined('ABSPATH') || exit;
 
-// The header's call-to-action number. Since theme 3.0 the company's details live
-// in the `harbor_business_phone` option (Settings → Business details); this still
-// reads the 2.x `header_phone` theme mod, which the 3.0 update removed, so it
-// falls back to the placeholder.
-$harbor_phone = get_theme_mod('header_phone', '{{phone}}');
+$harbor_phone = (string) get_option('harbor_business_phone', '');
 
 $harbor_links = [
     'Services' => home_url('/services/'),

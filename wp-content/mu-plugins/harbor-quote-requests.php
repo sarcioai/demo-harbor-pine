@@ -18,6 +18,21 @@ const HARBOR_QUOTE_SERVICES = [
     'other' => 'Something else',
 ];
 
+/**
+ * The form's wording, from the plugin's translation file. Since 1.4 that file is
+ * looked up in the plugin's own folder, but installed as a must-use plugin it
+ * has no folder, so a string with no file to come from falls back to its key.
+ */
+function harbor_quote_text(string $key): string
+{
+    static $strings = null;
+    if ($strings === null) {
+        $file = __DIR__ . '/harbor-quote-requests/languages/quote-form-en_US.php';
+        $strings = is_file($file) ? (array) include $file : [];
+    }
+    return (string) ($strings[$key] ?? $key);
+}
+
 add_action('init', static function (): void {
     register_post_type('quote_request', [
         'label' => 'Quote requests',
@@ -105,7 +120,7 @@ add_shortcode('harbor_quote_form', static function (): string {
   </div>
   <div class="field"><label for="hq-service">What can we help with?</label><select id="hq-service" name="service"><?php echo $options; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above. ?></select></div>
   <div class="field"><label for="hq-message">Tell us about your yard</label><textarea id="hq-message" name="message" rows="5" placeholder="Size, slope, what you'd love to see out there…"></textarea></div>
-  <button type="submit">Request my free quote</button>
+  <button type="submit"><?php echo esc_html(harbor_quote_text('quote_form.submit_button')); ?></button>
   <div class="harbor-quote-result" id="harbor-quote-result" role="status" hidden></div>
 </form>
 <script>
