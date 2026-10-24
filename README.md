@@ -42,7 +42,7 @@ docker run -p 4014:4014 -e SARCIO_BASE_PATH=/harbor-pine demo-harbor-pine
 ```
 
 Environment: `PORT`, `SARCIO_BASE_PATH`, `SARCIO_SITE_KEY`, `SARCIO_API_URL`,
-`SARCIO_WIDGET_SRC`, `SARCIO_SIDECAR_DSN` + `SARCIO_SHIM_TOKEN` (the sidecar
+`SARCIO_SIDECAR_DSN` + `SARCIO_SHIM_TOKEN` (the sidecar
 socket this demo talks to), and `HARBOR_ADMIN_PASSWORD` for wp-admin. Behind a
 proxy, send `X-Forwarded-Proto` so WordPress emits URLs in the visitor's
 scheme.
